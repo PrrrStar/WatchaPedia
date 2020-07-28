@@ -2,6 +2,19 @@
 
 <h1>Contents</h1>
 
+<p class="login">
+<% if user_signed_in? %>
+  Logged in as <strong><%= current_user.email %></strong>.
+  <br>
+  <%= link_to 'Edit profile', edit_user_registration_path%> |
+  <%= link_to "Logout", destroy_user_session_path, method: :delete%>
+<% else %>
+   <%= link_to "Login", new_user_session_path %> |
+   <%= link_to "Sign up", new_user_registration_path %>
+  
+<% end %>
+</p>
+
 <table>
   <thead>
     <tr>
@@ -14,6 +27,10 @@
     <% @contents.each do |content| %>
       <tr>
         <td><%= content.name %></td>
+        <td><%= content.published %></td>
+        <td><%= content.rate %></td>
+        
+        
         <td><%= link_to 'Show', content %></td>
         <td><%= link_to 'Edit', edit_content_path(content) %></td>
         <td><%= link_to 'Destroy', content, method: :delete, data: { confirm: 'Are you sure?' } %></td>
