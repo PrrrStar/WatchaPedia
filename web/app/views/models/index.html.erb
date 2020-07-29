@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>박스오피스</h1>
+
+    <div>
+    <% @models.each do |model| %>
+
+      <%= link_to model, :action =>'go' do %>
+        <div class = "contents">
+          <img class="img" src="https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1594015073/xc66xq85fra1fzv3hdrz.jpg" 
+          width="175"
+          height="250">
+          <h3><%= model.name %> </h3>
+          <%= model.published %> ㆍ<%= model.country %><br/>
+          예상★<%= model.rate %><br/>
+          예매율 <%=model.booking_rate%>%ㆍ누적 관객<%= model.num_of_people %>명
+        </div>
+      <% end %>
+    <% end %>
+    </div>
+
+<style>
+  .contents{
+    border 2px solid black;
+    float: left;
+    margin: 5px;
+  }
+</style>

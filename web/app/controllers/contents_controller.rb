@@ -2,6 +2,8 @@ class ContentsController < ApplicationController
   before_action :set_content, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:show, :edit, :update, :destroy]
   
+  
+  
   # GET /contents
   # GET /contents.json
   def index
@@ -16,6 +18,7 @@ class ContentsController < ApplicationController
   # GET /contents/new
   def new
     @content = Content.new
+    
   end
 
   # GET /contents/1/edit
@@ -70,6 +73,6 @@ class ContentsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def content_params
-      params.require(:content).permit(:name)
+      params.require(:content).permit(:name, :published, :country, :rate, :booking_rate, :num_of_people, :rank, :genre, :running_time, :summary, :people)
     end
 end

@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  published: 2020-07-29
+  country: MyString
+  rate: 
+  booking_rate: 1
+  num_of_people: 1
+  rank: 1
+  genre: MyString
+  running_time: 1
+  summary: MyString
+  people: MyString
+
+two:
+  name: MyString
+  published: 2020-07-29
+  country: MyString
+  rate: 
+  booking_rate: 1
+  num_of_people: 1
+  rank: 1
+  genre: MyString
+  running_time: 1
+  summary: MyString
+  people: MyString

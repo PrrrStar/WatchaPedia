@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  resources :models
+  resources :contents
+  
   authenticate :user, lambda { |u| u.admin?} do
     begin
       mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -9,7 +12,6 @@ Rails.application.routes.draw do
   end
   
   devise_for :users
-  resources :contents
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   
   
@@ -17,5 +19,5 @@ Rails.application.routes.draw do
   #devise_for  :user, controllers: {sessions: 'user/sessions'}
   
   
-  get '/' => 'contents#index'
+  get '/' => 'models#index'
 end
