@@ -10,15 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200729071549) do
+ActiveRecord::Schema.define(version: 20200729170423) do
 
   create_table "comments", force: :cascade do |t|
+    t.integer  "content_id"
+    t.text     "c_content"
+    t.integer  "c_like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "contents", force: :cascade do |t|
     t.string   "name"
+    t.date     "published"
+    t.string   "country"
+    t.float    "rate"
+    t.integer  "booking_rate"
+    t.integer  "num_of_people"
+    t.integer  "rank"
+    t.string   "genre"
+    t.integer  "running_time"
+    t.string   "summary"
+    t.string   "people"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "likes", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -40,11 +58,18 @@ ActiveRecord::Schema.define(version: 20200729071549) do
   end
 
   create_table "people", force: :cascade do |t|
+    t.string   "p_name"
+    t.string   "p_intro"
+    t.integer  "content_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "re_comments", force: :cascade do |t|
+    t.integer  "c_id"
+    t.string   "re_author"
+    t.string   "re_content"
+    t.integer  "re_like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

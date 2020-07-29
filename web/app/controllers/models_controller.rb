@@ -4,7 +4,7 @@ class ModelsController < ApplicationController
   # GET /models
   # GET /models.json
   def index
-    @models = Model.all
+    @models = Model.all.reverse
   end
 
   # GET /models/1
@@ -59,6 +59,11 @@ class ModelsController < ApplicationController
       format.html { redirect_to models_url, notice: 'Model was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+  
+  def comment
+    Comment.create(model_id: params[:model_id], mgs: params[:comment])
+    redirect_to :root
   end
 
   private

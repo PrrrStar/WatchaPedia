@@ -23,8 +23,27 @@
           <i class="fas fa-search"></i>
           <input class="menu_search" type="text" placeholder="작품 제목,배우,감독을 검색해보세요.">
         </div>
-        <span class="menu_login">로그인</span>
-        <span class="menu_sign-up" id="js-signUp">회원가입</span>
+
+        
+        <% if user_signed_in? %>
+          안녕하세요 <strong><%= current_user.nickname %> 님</strong>.
+          <br>
+          <%= link_to '정보수정', edit_user_registration_path%> |
+         
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <span class="menu_sign-up">로그아웃</span>
+          <% end %>
+          
+        <% else %>
+          <%= link_to new_user_session_path, :action => 'go' do %>
+            <span class="menu_login">로그인</span>
+          <% end %>
+          <%= link_to new_user_registration_path, :action => 'go' do %>
+            <span class="menu_sign-up" id="js-signUp">회원가입</span>
+          <% end %>
+        <% end %>
+
+      
       </div>
       <div class="pop_sign-up">
         <img src="img/pop_logo.png" class="pop_logo">
@@ -67,13 +86,11 @@
         <% @models.each do |model| %>
         <%= link_to model, :action =>'go' do %>
         <div class="type1-content-box">
-          <a href="contents.html">
-            <img src="img/ironrain.jpg" alt="강철비2: 정상회담">
-          </a>
+          <img src="img/ironrain.jpg" alt=<%= model.name %>>
           <span class="type1-content_title"><%= model.name %></span>
           <span class="type1-content_year"><%= model.published %> ㆍ <%= model.country %></span>
           <span class="type1-content_star">평균★ <%= model.rate %></span>
-          <span class="type1-content_info"><%=model.booking_rate%>% ㆍ 누적 관객<%= model.num_of_people %></span>
+          <span class="type1-content_info"><%=model.booking_rate%>% ㆍ 누적 관객<%= model.num_of_people %>명</span>
           <div class="type1-content_number"><%=model.rank%></div>
         </div>
         <% end %>
