@@ -1,28 +1,93 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
 
-<h1>박스오피스</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>왓차피디아 - 클론 코딩 프로젝트</title>
+</head>
 
-    <div>
-    <% @models.each do |model| %>
-
-      <%= link_to model, :action =>'go' do %>
-        <div class = "contents">
-          <img class="img" src="https://dhgywazgeek0d.cloudfront.net/watcha/image/upload/c_fill,h_400,q_80,w_280/v1594015073/xc66xq85fra1fzv3hdrz.jpg" 
-          width="175"
-          height="250">
-          <h3><%= model.name %> </h3>
-          <%= model.published %> ㆍ<%= model.country %><br/>
-          예상★<%= model.rate %><br/>
-          예매율 <%=model.booking_rate%>%ㆍ누적 관객<%= model.num_of_people %>명
+<body>
+  <p id="notice"><%= notice %></p>
+  <header class="menu-box">
+    <div class="menu">
+      <div class="menu_left">
+        <a href="index.html"><img class="menu_logo" src="img/logo.png" /></a>
+        <span class="menu_movie">영화</span>
+        <span class="menu_tv">TV 프로그램</span>
+        <span class="menu_book">책</span>
+      </div>
+      <div class="menu_right">
+        <div class="menu_search-box">
+          <i class="fas fa-search"></i>
+          <input class="menu_search" type="text" placeholder="작품 제목,배우,감독을 검색해보세요.">
         </div>
-      <% end %>
-    <% end %>
+        <span class="menu_login">로그인</span>
+        <span class="menu_sign-up">회원가입</span>
+      </div>
     </div>
+  </header>
+  <main class="first_contents-box contents-box">
+    <div class="contents">
+      <div class="contents_title">박스오피스</div>
+      <div class="type1-contents_contents">
+        <% @models.each do |model| %>
+        <%= link_to model, :action =>'go' do %>
+        <div class="type1-content-box">
+          <a href="contents.html">
+            <img src="img/ironrain.jpg" alt="강철비2: 정상회담">
+          </a>
+          <span class="type1-content_title"><%= model.name %></span>
+          <span class="type1-content_year"><%= model.published %> ㆍ <%= model.country %></span>
+          <span class="type1-content_star">평균★ <%= model.rate %></span>
+          <span class="type1-content_info"><%=model.booking_rate%>% ㆍ 누적 관객<%= model.num_of_people %></span>
+          <div class="type1-content_number"><%=model.rank%></div>
+        </div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="small-box ">
+      <span class="review">
+        지금까지&nbsp;
+      </span>
+      <span class="review review-red">
+        ★ 562,339,084 개의 평가가&nbsp;
+      </span>
+      <span class="review">
+        쌓였어요.
+      </span>
+    </div>
+    <div class="big-box">
+      <div class="first-column column">
+        <span class="footer_info">
+          서비스 이용약관 &nbsp;|&nbsp; 개인정보 처리방침 &nbsp;|&nbsp; 회사 안내
+        </span>
+      </div>
+      <div class="second-column column">
+        <span class="footer_info">
+          고객센터 &nbsp;|&nbsp; cs@watchapedia.co.kr
+        </span>
+        <span class="footer_info">
+          제휴 및 대외 협력 &nbsp;|&nbsp; contact@watcha.com, 070-7554-9696
+        </span>
+      </div>
+      <div class="third-column column">
+        <span class="footer_info">
+          주식회사 왓챠 &nbsp;|&nbsp; 대표 박태훈 &nbsp;|&nbsp; 서울특별시 서초구 강남대로 343 신덕빌딩 3층
+        </span>
+        <span class="footer_info">
+          사업자 등록 번호 211-88-66013
+        </span>
+        <div class="footer_info">
+          <img src="img/footer_logo.png" class="footer_logo">
+          <span class="footer_info">© 2011 Watcha. Inc</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
 
-<style>
-  .contents{
-    border 2px solid black;
-    float: left;
-    margin: 5px;
-  }
-</style>
+</html>

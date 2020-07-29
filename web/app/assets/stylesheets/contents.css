@@ -1,0 +1,29 @@
+.thumbnail {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(136, 136, 136);
+}
+
+.content_info-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content_info-box .left-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 166px;
+    height: 236px;
+    background-color: white;
+    border: 1px solid rgb(226, 220, 220);
+    border-radius: 3px;
+}
+
+.content_info-box .left-column img {
+    width: 160px;
+    height: 230px;
+}
+
