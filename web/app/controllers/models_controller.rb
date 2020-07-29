@@ -4,7 +4,7 @@ class ModelsController < ApplicationController
   # GET /models
   # GET /models.json
   def index
-    @models = Model.all.reverse
+    @models = Model.all.order(:rank)
   end
 
   # GET /models/1

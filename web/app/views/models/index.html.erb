@@ -13,7 +13,9 @@
   <header class="menu-box">
     <div class="menu">
       <div class="menu_left">
-        <a href="index.html"><img class="menu_logo" src="img/logo.png" /></a>
+        <%= link_to "/", :action =>'go' do %>
+        <img class="menu_logo" src="img/logo.png" /></a>
+        <% end%>
         <span class="menu_movie">영화</span>
         <span class="menu_tv">TV 프로그램</span>
         <span class="menu_book">책</span>
@@ -26,24 +28,24 @@
 
 
         <% if user_signed_in? %>
-        안녕하세요 <strong><%= current_user.nickname %> 님</strong>.
-        <br>
-        <%= link_to '정보수정', edit_user_registration_path%> |
-
-        <%= link_to destroy_user_session_path, method: :delete do %>
-        <span class="menu_sign-up">로그아웃</span>
+          안녕하세요 <strong><%= current_user.nickname %> 님</strong>.
+          <br>
+          <%= link_to '정보수정', edit_user_registration_path%> |
+  
+          <%= link_to destroy_user_session_path, method: :delete do %>
+          <span class="menu_sign-up">로그아웃</span>
         <% end %>
 
         <% else %>
-        <%= link_to new_user_session_path, :action => 'go' do %>
-        <span class="menu_login">로그인</span>
+          <%= link_to new_user_session_path, :action => 'go' do %>
+          <span class="menu_login">로그인</span>
+          <% end %>
+          <%= link_to new_user_registration_path, :action => 'go' do %>
+          <span class="menu_sign-up" id="js-signUp">회원가입</span>
+          <% end %>
         <% end %>
-        <%= link_to new_user_registration_path, :action => 'go' do %>
-        <span class="menu_sign-up" id="js-signUp">회원가입</span>
-        <% end %>
-        <% end %>
-
-
+        
+      
       </div>
       <div class="pop_sign-up">
         <img src="img/pop_logo.png" class="pop_logo">
@@ -138,7 +140,9 @@
       </div>
     </div>
   </footer>
-  <script src="../../assets/javascripts/index.js"></script>
+  
 </body>
+
+
 
 </html>
