@@ -24,12 +24,13 @@
  .comment-nemo {
     display: flex;
     flex-direction: column;
-    width: 290px;
-    height: 290px;
+    width: 315px;
+    height: 315px;
     background-color: #F2F2F2;
     border-radius: 10px;
     padding: 12px;
     font-weight: 400;
+    margin-right: 11px;
 }
 
 .comment_user-img {
@@ -71,5 +72,5 @@
     color: #FF2F6E;
     font-size: 18px;
     font-weight: 500;
-    padding-top: 10px;
+    padding-top: 10px; 
 }
