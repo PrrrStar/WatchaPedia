@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     background-color: #F8F8F8;
+    padding-top: 30px;
 }
 
 .contents_middle-box {
@@ -10,11 +11,33 @@
     display: flex;
 }
 
+.leave-comment-box {
+    width: 640px;
+    border: 1px solid rgb(224, 224, 224);
+    background-color: white;
+    border-radius: 5px;
+    padding: 13px 21px;
+    margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+.leave-comment {
+    font-size: 18px;
+    font-weight: 500;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 4px;
+    padding: 10px 60px;
+}
+
 .contents_contents-box {
     width: 640px;
     border: 1px solid rgb(224, 224, 224);
     background-color: white;
-    margin-top: 30px;
     border-radius: 5px;
 }
 
