@@ -258,7 +258,7 @@
                 <!-- 네번째(코멘트) 시작 -->
             <%=form_tag model_comments_path(@model) do%>
                 <div class="contents_contents_column">
-                    <div>
+                    <div class="column_column">
                         <div>
                             <span class="contents_contents_title">코멘트</span>
                             <span class="contents_contents_title-number">550+</span>
@@ -281,7 +281,7 @@
                     
                 <% @model.comments.each do |comment| %>  
                     <div class="contents_contents_comment-container">
-                        <div class="comment-box">
+                        <div class="comment-nemo">
                             <div class="comment_user">
                                 <img src="" alt="" class="comment_user-img">
                                 <span class="user_name"><%= comment.user.nickname%></span>
