@@ -87,7 +87,7 @@
             <!-- 첫번째 줄 -->
             <div class="content_info">
                 <span class="gray">예매 순위 · &nbsp;</span>
-                <span class="white"><%= @model.rank%>(<%=@model.booking_rate%>)&nbsp;</span>
+                <span class="white"><%= @model.rank%>(<%=@model.booking_rate%>%)&nbsp;</span>
                 <span class="gray">개봉 ·&nbsp;</span>
                 <span class="white">오늘 개봉 &nbsp;</span>
                 <span class="gray">누적 관객 · &nbsp;</span>
@@ -245,7 +245,7 @@
                     <div>
                         <span class="contents_contents_title">별점 그래프</span>
                         <div>
-                            <span class="star_average">평균 ★<%= @model.rate%>/span>
+                            <span class="star_average">평균 ★<%= @model.rate%></span>
                             <span class="star_people">(2,225명)</span>
                         </div>
                     </div>
