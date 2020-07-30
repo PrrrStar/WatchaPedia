@@ -8,6 +8,7 @@
 </head>
 
 <body>
+<p id="notice"><%= notice %></p>
     <!-- 메뉴 헤더입니다. -->
     <header class="menu-box">
         <div class="menu">
@@ -85,30 +86,37 @@
         <div class="right-column">
             <!-- 첫번째 줄 -->
             <div class="content_info">
-                <span class="gray">예매 순위 ·&nbsp;</span>
-                <span class="white">1위(56%)&nbsp;</span>
+                <span class="gray">예매 순위 · &nbsp;</span>
+                <span class="white"><%= @model.rank%>(<%=@model.booking_rate%>)&nbsp;</span>
                 <span class="gray">개봉 ·&nbsp;</span>
                 <span class="white">오늘 개봉 &nbsp;</span>
-                <span class="gray">누적 관객 ·&nbsp;</span>
-                <span class="white">3,870명</span>
+                <span class="gray">누적 관객 · &nbsp;</span>
+                <span class="white"><%= @model.num_of_people %></span>
             </div>
             <!-- 첫번째 줄 끝 -->
 
             <!-- 두번째 줄 작품명 -->
             <div class="content_info">
-                <span class="content_title">강철비2: 정상회담</span>
+                <span class="content_title"><%= @model.name %></span>
             </div>
             <!-- 두번째 줄 작품명 끝 -->
+  
+  
+  
+  
+  
+
+
 
             <!-- 세번째 줄 년도, 장르, 나라-->
             <div class="content_info">
-                <span class="content_type">2019 · 드라마 · 한국</span>
+                <span class="content_type"><%= @model.published %> · <%= @model.genre %> · <%= @model.country %></span>
             </div>
             <!-- 세번째 줄 년도, 장르, 나라 끝 -->
 
             <!-- 네번째 줄 평점 -->
             <div class="content_info">
-                <span class="content_star">평점 ★2.9 (690명)</span>
+                <span class="content_star">평점 ★ <%= @model.rate %>(690명)</span>
             </div>
             <!-- 네번째 줄 평점 끝 -->
 
@@ -168,15 +176,12 @@
                             <span class="contents_contents_more">더보기</span>
                         </a>
                         <!-- 여기입니다 -->
-
                     </div>
-                    <span class="contents_contents_name contents_info">강철비2: 정상회담</span>
-                    <span class="contents_contents_info contents_info">2019 · 한국 · 드라마</span>
-                    <span class="contents_contents_runtime contents_info">2시간 12분</span>
+                    <span class="contents_contents_name contents_info"><%= @model.name %></span>
+                    <span class="contents_contents_info contents_info"><%= @model.published %> · <%= @model.country %> · <%= @model.genre %></span>
+                    <span class="contents_contents_runtime contents_info"><%= @model.running_time %></span>
                     <span class="contents_contents_summary contents_info">
-                        남북미 정상회담 중, 북한 내 쿠데타로 세 정상이 납치된다!&nbsp;
-                        북미 평화협정 체결을 위한 대한민국 대통령(정우성), 북한의 최고지도자인 위원장(유연석)과&nbsp;
-                        미국 대통령(앵거스 맥페이든)간의 남북미 정상회담이 북한 원산에서 열...
+                        <%= @model.summary %>
                     </span>
                 </div>
                 <!-- 첫번째(기본정보) 끝입니다 -->
@@ -240,7 +245,7 @@
                     <div>
                         <span class="contents_contents_title">별점 그래프</span>
                         <div>
-                            <span class="star_average">평균 ★2.9</span>
+                            <span class="star_average">평균 ★<%= @model.rate%>/span>
                             <span class="star_people">(2,225명)</span>
                         </div>
                     </div>
@@ -251,6 +256,7 @@
                 <!-- 세번째(별점 그래프) 끝 -->
 
                 <!-- 네번째(코멘트) 시작 -->
+            <%=form_tag model_comments_path(@model) do%>
                 <div class="contents_contents_column">
                     <div>
                         <div>
@@ -265,25 +271,34 @@
                         <!-- 여기입니다 -->
 
                     </div>
+
+                      <div class="input-field">
+                        <%= text_area_tag :c_content, nil, placeholder: "댓글 작성해주세요", require: true%>
+                        <input type="submit" value="댓글 쓰기">
+                      </div>
+                      
+                    
+                    
+                <% @model.comments.each do |comment| %>  
                     <div class="contents_contents_comment-container">
                         <div class="comment-box">
                             <div class="comment_user">
                                 <img src="" alt="" class="comment_user-img">
-                                <span class="user_name">filmaholic9</span>
+                                <span class="user_name"><%= comment.user.nickname%></span>
                             </div>
                             <div class="comment_comment">
-                                대한민국 대통령 정우성에 김정은은 유연석 ㅋㅋㅋㅋㅋㅋㅋㅋ 캐스팅부터 장난하냐 ㅋㅋㅋㅋㅋㅋㅋ
-                                (대충 예상되는 내용)
-                                미국 : 평화협정 하자고 불러놓고는 자기들의 이익만 추구하며 훼방을 놓고 억지
+                              <%= comment.c_content %>
                             </div>
                             <div class="comment_feel">
-                                <span class="comment_feel-good"></span>
-                                <div class="comment_feel-comment"></div>
+                                <span class="comment_feel-good"><%=comment.c_like%></span>
+                                <div class="comment_feel-comment">[여기 댓글 개수 입력]</div>
                             </div>
                             <div class="comment_click-good">좋아요</div>
                         </div>
                     </div>
+                <% end %>
                 </div>
+            <% end %>    
                 <!-- 네번째(코멘트) 끝 -->
 
                 <div class="contents_contents_column">
@@ -347,92 +362,4 @@
 </html>
 
 
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @model.name %>
-</p>
-
-<p>
-  <strong>Published:</strong>
-  <%= @model.published %>
-</p>
-
-<p>
-  <strong>Country:</strong>
-  <%= @model.country %>
-</p>
-
-<p>
-  <strong>Rate:</strong>
-  <%= @model.rate %>
-</p>
-
-<p>
-  <strong>Booking rate:</strong>
-  <%= @model.booking_rate %>
-</p>
-
-<p>
-  <strong>Num of people:</strong>
-  <%= @model.num_of_people %>
-</p>
-
-<p>
-  <strong>Rank:</strong>
-  <%= @model.rank %>
-</p>
-
-<p>
-  <strong>Genre:</strong>
-  <%= @model.genre %>
-</p>
-
-<p>
-  <strong>Running time:</strong>
-  <%= @model.running_time %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @model.summary %>
-</p>
-
-<p>
-  <strong>People:</strong>
-  <%= @model.people %>
-</p>
-<br><br>
-<div>
-  댓글 :<%=@comments_count%>
-  
-  
-  <%=form_tag model_comments_path(@model) do%>
-    <div class="input-field">
-      <%= text_area_tag :c_content, nil, placeholder: "댓글 작성해주세요", require: true%>
-      <input type="submit" value="댓글 쓰기">
-    </div>
-    
-    <div>
-    <% if @model.comments.present? %>
-      <ul>
-        <% @model.comments.each do |comment| %>
-        <li>
-          <span><%= comment.user.nickname%></span>
-          <span><%= comment.created_at%></span>
-          <p><%= comment.c_content %></p> like <%=comment.c_like%>
-        
-          <% if current_user.id == comment.user_id %>
-            <%=link_to "삭제", model_comment_path(@model ,comment), method: "delete" %> 
-          <% end%>
-          
-        </li>
-        <% end %>
-      </ul>
-      
-      
-    <%end%>
-    </div>
-  <%end %>
-</div>
