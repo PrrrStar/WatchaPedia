@@ -33,7 +33,7 @@
     flex-direction: column;
 }
 
-.type1-content-box a img {
+.type1-content-box img {
     position: relative;
     width: 250px;
     height: 360px;

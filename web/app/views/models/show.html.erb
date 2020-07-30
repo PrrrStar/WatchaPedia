@@ -13,7 +13,9 @@
     <header class="menu-box">
         <div class="menu">
             <div class="menu_left">
-                <a href="index.html"><img class="menu_logo" src="img/logo.png" /></a>
+                <%= link_to "/", :action =>'go' do %>
+                <img class="menu_logo" src="<%=asset_path 'logo.png'%>" />
+                <% end%>
                 <span class="menu_movie">영화</span>
                 <span class="menu_tv">TV 프로그램</span>
                 <span class="menu_book">책</span>
@@ -29,7 +31,7 @@
 
             <!-- 여기는 회원가입 팝업창입니다 -->
             <div class="pop_sign-up">
-                <img src="img/pop_logo.png" class="pop_logo">
+                <img src="<%=asset_path 'pop_logo.png'%>" class="pop_logo">
                 <span class="pop_title">회원가입</span>
                 <form action="">
                     <div class="pop_input-box">
@@ -78,7 +80,7 @@
 
         <!-- 왼쪽 포스터입니다. -->
         <div class="left-column">
-            <img src="img/ironrain.jpg" alt="강철비2: 정상회담">
+            <img src="<%=asset_path 'ironrain.jpg'%>" alt="강철비2: 정상회담">
         </div>
         <!-- 여기까지 왼쪽 포스터 -->
 
@@ -187,57 +189,31 @@
                 <!-- 첫번째(기본정보) 끝입니다 -->
 
                 <!-- 두번째(출연/제작) 시작 -->
+            <%=form_tag model_peoples_path(@model) do%>
+            <% if @model.people.present? %>
+
                 <div class="contents_contents_column">
                     <span class="contents_contents_title">출연/제작</span>
                     <div class="contents_contents_container">
                         <div class="contents_contents_content">
                             <div class="contents_contents_profile">
-                                <img src="img/yang.jfif" alt="양우석" class="profile_img">
+                              
+                              <% @model.people.each do |person| %>
+                                <img src="<%asset_path 'yang.jfif'%>" alt="<%=person.name%>" class="profile_img">
+                                
                                 <div>
-                                    <span class="profile_name">양우석</span>
-                                    <span class="profile_job">감독</span>
+                                    <span class="profile_name"><%=person.name%></span>
+                                    <span class="profile_job"><%=person.role%></span>
+                                    
                                 </div>
-                            </div>
-                            <div class="contents_contents_profile">
-                                <img src="img/actor1.jfif" alt="정우성" class="profile_img">
-                                <div>
-                                    <span class="profile_name">정우성</span>
-                                    <span class="profile_job">주연</span>
-                                </div>
-                            </div>
-                            <div class="contents_contents_profile">
-                                <img src="img/actor2.jfif" alt="곽도원" class="profile_img">
-                                <div>
-                                    <span class="profile_name">곽도원</span>
-                                    <span class="profile_job">주연</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="contents_contents_content">
-                            <div class="contents_contents_profile">
-                                <img src="img/actor3.jfif" alt="유연석" class="profile_img">
-                                <div>
-                                    <span class="profile_name">유연석</span>
-                                    <span class="profile_job">주연</span>
-                                </div>
-                            </div>
-                            <div class="contents_contents_profile">
-                                <img src="img/actor4.jfif" alt="앵거스 맥페이든" class="profile_img">
-                                <div>
-                                    <span class="profile_name">앵거스 맥페이든</span>
-                                    <span class="profile_job">주연</span>
-                                </div>
-                            </div>
-                            <div class="contents_contents_profile">
-                                <img src="img/actor5.jfif" alt="김상욱" class="profile_img">
-                                <div>
-                                    <span class="profile_name">김상욱</span>
-                                    <span class="profile_job">조연</span>
-                                </div>
+                              <% end %>
+                              
                             </div>
                         </div>
                     </div>
                 </div>
+            <% end %>    
+            <% end %>
                 <!-- 두번째(출연/제작) 끝 -->
 
                 <!-- 세번째(별점 그래프) 시작 -->
@@ -250,7 +226,7 @@
                         </div>
                     </div>
                     <div class="contents_contents_star-box">
-                        <img src="img/star_graph.png" alt="별점 그래프" class="star-graph">
+                        <img src="<%=asset_path 'star_graph.png'%>" alt="별점 그래프" class="star-graph">
                     </div>
                 </div>
                 <!-- 세번째(별점 그래프) 끝 -->
@@ -278,9 +254,9 @@
                       </div>
                       
                     
-                    
-                <% @model.comments.each do |comment| %>  
+                <% if @model.comments.present? %>
                     <div class="contents_contents_comment-container">
+                <% @model.comments.each do |comment| %>  
                         <div class="comment-nemo">
                             <div class="comment_user">
                                 <img src="" alt="" class="comment_user-img">
@@ -291,12 +267,13 @@
                             </div>
                             <div class="comment_feel">
                                 <span class="comment_feel-good"><%=comment.c_like%></span>
-                                <div class="comment_feel-comment">[여기 댓글 개수 입력]</div>
+                                <div class="comment_feel-comment">[여기]</div>
                             </div>
                             <div class="comment_click-good">좋아요</div>
                         </div>
-                    </div>
                 <% end %>
+                    </div>
+                <% end %>    
                 </div>
             <% end %>    
                 <!-- 네번째(코멘트) 끝 -->
@@ -349,14 +326,71 @@
                     사업자 등록 번호 211-88-66013
                 </span>
                 <div class="footer_info">
-                    <img src="img/footer_logo.png" class="footer_logo">
+                    <img src="<%=asset_path 'footer_logo.png'%>" class="footer_logo">
                     <span class="footer_info">© 2011 Watcha. Inc</span>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="js/index.js"></script>
-    <script src="js/star.js"></script>
+    <script type="text/javascript">
+        const stars = document.querySelectorAll(".star_box");
+        const realStars = document.querySelectorAll(".real-star");
+        const starBox = document.querySelector(".content_info_star");
+        
+        // 별을 채우는 함수
+        function fillFullStar(value) {
+            // 소수점을 각각 배열의 원소로 분리
+            value = value.split(".");
+            value = value.map(x => parseInt(x));
+        
+            // 정수 부분 만큼 채워지는 로직
+            for (var i = 0; i < value[0]; i++) {
+                realStars[i].classList.remove('far', 'fas', 'fa-star', 'fa-star-half-alt');
+                realStars[i].classList.add('fas', 'fa-star');
+            }
+            // 소수점이 있다면, 반만큼 채우라는 로직
+            if (value[1]) {
+                realStars[value[0]].classList.remove('far', 'fa-star');
+                realStars[value[0]].classList.add('fas', 'fa-star-half-alt');
+            }
+        }
+        
+        // 이벤트 타겟을 확인해서 위 함수를 돌리기 위한 함수.
+        function fillStars(event) {
+            let value = event.target.getAttribute("value");
+            fillFullStar(value);
+        }
+        
+        // 채워진 별들이 다시 빈 별로 돌아가는 함수.
+        function emptyStars() {
+            let value = event.target.getAttribute("value");
+            value = value.split(".");
+            value = value.map(x => parseInt(x));
+            // 빈 별로 만드는 로직.
+            if (value[1]) {
+                realStars[value[0]].classList.remove('far', 'fas', 'fa-star-half-alt', 'fa-star');
+                realStars[value[0]].classList.add('far', 'fa-star');
+            }
+        }
+        
+        // 5개 별 묶음 박스에서 마우스가 나갈 시에 채워진 별들이 초기화되는 함수.
+        function resetStar() {
+            for (var i = 0; i < realStars.length; i++) {
+                realStars[i].classList.remove("fas", "far", "fa-star-half-alt", "fa-star");
+                realStars[i].classList.add("far", "fa-star");
+            };
+        }
+        
+        
+        // 반복문과 배열을 이용하여, 위의 함수들을 호출할수 있게끔 addEventListener를 달아줬습니다.
+        
+        for (var i = 0; i < stars.length; i++) {
+            stars[i].addEventListener("mouseover", fillStars);
+            stars[i].addEventListener("mouseout", emptyStars);
+        };
+        
+        starBox.addEventListener("mouseout", resetStar);
+    </script>
 </body>
 
 </html>

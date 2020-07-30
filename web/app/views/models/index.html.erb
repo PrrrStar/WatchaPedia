@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>왓차피디아 깃 테스트</title>
-
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <div class="menu">
       <div class="menu_left">
         <%= link_to "/", :action =>'go' do %>
-        <img class="menu_logo" src="img/logo.png" /></a>
+        <img class="menu_logo" src="<%=asset_path 'logo.png'%>" />
         <% end%>
         <span class="menu_movie">영화</span>
         <span class="menu_tv">TV 프로그램</span>
@@ -46,9 +46,10 @@
           <% end %>
         <% end %>
         
+
       </div>
       <div class="pop_sign-up">
-        <img src="img/pop_logo.png" class="pop_logo">
+        <img src="<%=asset_path 'pop_logo.png'%>" class="pop_logo">
         <span class="pop_title">회원가입</span>
         <form action="">
           <div class="pop_input-box">
@@ -88,7 +89,7 @@
         <% @models.each do |model| %>
         <%= link_to model, :action =>'go' do %>
         <div class="type1-content-box">
-          <img src="img/ironrain.jpg" alt=<%= model.name %>>
+          <img src="<%=asset_path 'ironrain.jpg'%>" alt=<%= model.name %>>
           <span class="type1-content_title"><%= model.name %></span>
           <span class="type1-content_year"><%= model.published %> ㆍ <%= model.country %></span>
           <span class="type1-content_star">평균★ <%= model.rate %></span>
@@ -134,13 +135,34 @@
           사업자 등록 번호 211-88-66013
         </span>
         <div class="footer_info">
-          <img src="img/footer_logo.png" class="footer_logo">
+          <img src="<%=asset_path 'footer_logo.png'%>" class="footer_logo">
           <span class="footer_info">© 2011 Watcha. Inc</span>
         </div>
       </div>
     </div>
   </footer>
-  
+  <script type="text/javascript">
+    const signUp = document.querySelector("#js-signUp");
+    const popSignUp = document.querySelector(".pop_sign-up");
+    const overlay = document.querySelector(".overlay");
+    const body = document.querySelector("body");
+
+    function showSignUp() {
+      popSignUp.style.display = "flex";
+      overlay.style.display = "block";
+    };
+
+    function closePopUp(event) {
+      let target = event.target;
+      if (target.className == "overlay") {
+        popSignUp.style.display = "none";
+        overlay.style.display = "none";
+      }
+    }
+
+    signUp.addEventListener("click", showSignUp);
+    body.addEventListener("click", closePopUp);
+  </script>
 </body>
 
 

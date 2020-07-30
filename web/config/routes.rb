@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   
   resources :models do
     resources :comments, only: [:create, :destroy]
+    resources :peoples, only: [:show, :index]
   end
   authenticate :user, lambda { |u| u.admin? } do
       begin

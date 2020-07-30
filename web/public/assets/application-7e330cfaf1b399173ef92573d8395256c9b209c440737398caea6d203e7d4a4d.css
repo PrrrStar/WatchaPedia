@@ -1,0 +1,1011 @@
+.contents_contents_column:nth-child(4) .column_column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contents_contents_column:nth-child(4) .column_column div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contents_contents_title-number {
+    font-size: 14px;
+    color: rgb(131, 131, 131);
+    margin-left: 5px;
+}
+
+.contents_contents_comment-container {
+    margin: 30px 0px;
+    display: flex;
+}
+
+ .comment-nemo {
+    display: flex;
+    flex-direction: column;
+    width: 315px;
+    height: 315px;
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    padding: 12px;
+    font-weight: 400;
+    margin-right: 11px;
+}
+
+.comment_user-img {
+    width: 33px;
+    height: 33px;
+    border-radius: 50%;
+    margin-right: 11px;
+}
+
+.comment_user {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dadada;
+    padding-bottom: 13px;
+}
+
+.comment_comment {
+    padding: 15px 0px;
+    border-bottom: 1px solid #dadada;
+    line-height: 145%;
+}
+
+.comment_feel {
+    color: rgb(90, 90, 90);
+    padding: 15px 0px;
+    border-bottom: 1px solid #dadada;
+    font-size: 14px;
+}
+
+.comment_feel-good i , .comment_feel-comment i {
+    margin-right: 3px;
+}
+
+.comment_feel-good {
+    margin-right: 18px;
+}
+
+.comment_click-good {
+    color: #FF2F6E;
+    font-size: 18px;
+    font-weight: 500;
+    padding-top: 10px; 
+}
+/* 메뉴바와 겹쳐있는 작품 썸네일 */
+
+.thumbnail {
+    width: 100%;
+    height: 400px;
+    background-color: rgb(31, 31, 31);
+}
+
+/* 썸네일 밑에 겹쳐있는 콘텐츠 정보들 */
+.content_info-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+/* 콘텐츠 정보들 중에 왼쪽 부분 */
+.content_info-box .left-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 166px;
+    height: 236px;
+    background-color: white;
+    border: 1px solid rgb(226, 220, 220);
+    border-radius: 3px;
+}
+
+/* 왼쪽 부분 안에 포스터 */
+.content_info-box .left-column img {
+    width: 160px;
+    height: 230px;
+}
+
+/* 콘텐츠 정보 중 오른쪽 부분 */
+.right-column {
+    width: 750px;
+    height: 230px;
+    margin-left: 22px;
+}
+
+/* 오른쪽 부분 중 첫번째 줄 */
+.content_info:first-child {
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+/* 첫번째 줄에 회색 글씨 */
+.content_info:first-child .gray {
+    color: gray;
+}
+
+/* 첫번째 줄에 하얀 글씨 */
+.content_info:first-child .white {
+    color: rgb(231, 231, 231);
+}
+
+/* 오른쪽 부분 중 두번째 줄 */
+.content_info:nth-child(2) {
+    font-size: 33px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* 오른쪽 부분 중 세번째 줄 */
+.content_info:nth-child(3) {
+    font-size: 17px;
+    color: rgb(173, 173, 173);
+    margin-bottom: 20px;
+}
+
+/* 오른쪽 부분 중 네번째 줄 */
+.content_info:nth-child(4) {
+    font-size: 17px;
+    border-top: 1px solid rgb(224, 224, 224);
+    border-bottom: 1px solid rgb(224, 224, 224);
+    padding: 10px 0px;
+}
+
+/* 오른쪽 부분 중 보고싶어요 버튼 */
+.content_want-see {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF2F6E;
+    color: white;
+    font-size: 18px;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    margin-right: 33px;
+    margin-top: 33px;
+}
+
+/* 보고싶어요 버튼의 plus 아이콘 */
+.content_want-see i {
+    margin-right: 10px;
+    margin-left: -10px;
+    transition: all 0.5s ease;
+}
+
+/* plus 아이콘 돌아가는 기능 */
+.content_want-see:hover > .plus-rotate {
+    transform: rotate(90deg);
+}
+
+/* 오른쪽 부분 중 마지막 줄 */
+.content_info:last-child {
+    display: flex;
+}
+
+/* 마지막 줄에서 평가하기 쪽 박스 */
+.content_info-right {
+    display: flex;
+    flex-direction: column;
+}
+
+/* 평가하기 글씨 */
+.content_info-right span:first-child {
+    font-size: 13px;
+    color: rgb(122, 122, 122);
+    margin: 10px 0px;
+}
+
+/* 별 5개 한 묶음 박스 */
+.content_info_star {
+    width: 250px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+/* 별 한개씩 개별 포장 박스 */
+.star_box {
+    width: 10%;
+    height: 100%;
+}
+
+/* 별 아이콘 */
+.content_info_star i {
+    position: absolute;
+    font-size: 40px;
+    color: #ffdd63;
+    z-index: -1;
+}
+
+/* 마진을 조정하기 위한 첫번째 별 */
+.real-star1 {
+    margin-left: 2.3px;
+}
+
+/* 마진을 조정하기 위한 두번째 별 */
+.real-star2 {
+    margin-left: 52.8px;
+}
+
+/* 마진을 조정하기 위한 세번째 별 */
+.real-star3 {
+    margin-left: 102.5px;
+}
+
+/* 마진을 조정하기 위한 네번째 별 */
+.real-star4 {
+    margin-left: 153px;
+}
+
+/* 마진을 조정하기 위한 다섯번째 별 */
+.real-star5 {
+    margin-left: 202.2px;
+}
+.contents_main-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #F8F8F8;
+}
+
+.contents_middle-box {
+    width: 62%;
+    display: flex;
+}
+
+.contents_contents-box {
+    width: 640px;
+    border: 1px solid rgb(224, 224, 224);
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.contents_contents_column {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #F8F8F8;
+    margin: 25px 20px;
+}
+
+.contents_contents_column:first-child div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.contents_contents_title {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.contents_contents_more {
+    color: #FF2F6E;
+}
+
+.contents_info {
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: rgb(44, 44, 44);
+}
+
+.contents_contents_runtime {
+    margin-bottom: 20px;
+}
+
+.contents_contents_summary {
+    line-height: 150%;
+}
+
+.contents_contents_column:nth-child(3) div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contents_contents_column:nth-child(3) div div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.star_average {
+    margin-bottom: 5px;
+}
+
+.star_people {
+    color: rgb(131, 131, 131);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.contents_contents_star-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0px;
+}
+
+.star-graph {
+    width: 390px;
+    height: 110px;
+    margin: auto;
+}
+.footer {
+    margin-top: 50px;
+}
+
+.small-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: #1C1D1F;
+}
+
+.review {
+    color: #D1D1D2;
+    font-size: 19px;
+}
+
+.review-red {
+    color: #FF053B;
+}
+
+.big-box {
+    height: 220px;
+    background-color: #27272b;
+    color: #c0c0c0;
+    font-weight: 400;
+}
+
+.big-box .column {
+    margin-left: 100px;
+    font-size: 13px;
+}
+
+.first-column {
+    padding-top: 24px;
+    padding-bottom: 21px;
+}
+
+.second-column {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 18px;
+}
+
+.second-column span {
+    margin: 3px 0px;
+}
+
+.third-column {
+    color: #848485;
+    display: flex;
+    flex-direction: column;
+}
+
+.third-column .footer_info {
+    margin: 3px 0px;
+}
+
+.third-column div {
+    display: flex;
+    align-items: center;
+}
+
+.third-column div img {
+    margin-right: 20px;
+}
+.menu-box {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 12px 0px;
+    border-bottom: 1px solid rgb(238, 238, 238);
+    background-color: white;
+    z-index: 4;
+}
+
+.menu {
+    width: 87%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+}
+
+.menu_movie, .menu_sign-up {
+    color: rgb(77, 77, 77);
+}
+
+.menu_tv ,.menu_book ,.menu_login {
+    color: rgb(150, 150, 150);
+}
+
+.menu_left ,.menu_right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu_left span {
+    margin-left: 25px;
+}
+
+.menu_right .menu_login {
+    margin: 0px 25px
+}
+
+.menu_logo {
+    width: 150px;
+    height: 37px;
+}
+
+.menu_sign-up {
+    border: 1px solid rgb(160, 160, 160);
+    padding: 8px 11px;
+    border-radius: 5px;
+}
+
+.menu_search-box {
+    display: flex;
+    width: 300px;
+    height: 40px;
+    background-color: #F5F5F7;
+    align-items: center;
+}
+
+.menu_search-box i {
+    color: #CBCBD1;
+    padding: 0px 10px;
+}
+
+.menu_search {
+    border: none;
+    font-weight: 700;
+    color: #929292;
+    width: 250px;
+    background-color: #F5F5F7;
+}
+
+.menu_search:focus {
+    outline: none;
+}
+.pop_sign-up {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 380px;
+    height: 620px;
+    background-color: white;
+    transform: translate(-50%,-50%);
+    border-radius: 5px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    width: 100%; height: 100%;
+    left: 0; 
+    top: 0;
+    background-color: rgba(0,0,0, 0.55);
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.pop_logo {
+    width: 115px;
+    height: 70px;
+    margin-top: 40px;
+}
+
+.pop_title {
+    font-size: 17px;
+}
+
+.pop_input-box {
+    width: 330px;
+    height: 43px;
+    border-radius: 3px;
+    background-color: #F5F5F5;
+    margin: 7px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pop_input-box input {
+    width: 95%;
+    height: 100%;
+    border: none;
+    background-color: #F5F5F5;
+    font-size: 16px;
+    outline: none;
+    font-family: inherit;
+}
+
+.pop_btn {
+    width: 330px;
+    height: 43px;
+    border-radius: 3px;
+    background-color: #FF2F6E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: inherit;
+}
+
+.pop_already {
+    color: rgb(109, 109, 109);
+}
+
+.pop_already a {
+    color: #FF2F6E;
+}
+
+.pop_or {
+    color: rgb(109, 109, 109);
+}
+
+.pop_line-box {
+    display: flex;
+    width: 330px;
+    justify-content: space-between;
+}
+
+.pop_line {
+    width: 142px;
+    height: 1px;
+    background-color: rgb(109, 109, 109);
+    margin-top: -32px;
+}
+
+.pop_facebook {
+    width: 330px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 45px;
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: #3C5AA0;
+    font-family: inherit;
+    font-size: 17px;
+    position: relative;
+}
+
+.pop_facebook i {
+    position: absolute;
+    left: 0;
+    margin-left: 15px;
+    font-size: 25px;
+}
+.contents_contents_container {
+    margin-top: 15px;
+    display: flex;
+}
+
+.contents_contents_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contents_contents_profile {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.profile_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.contents_contents_profile div {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    border-bottom: 1px solid #F8F8F8;
+    padding-bottom: 15px;
+}
+
+.profile_name {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.profile_job {
+    font-size: 14px;
+    color: rgb(131, 131, 131);
+}
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* line 1, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 10, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 33px;
+}
+
+/* line 17, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+/* line 23, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+a {
+  color: #000;
+}
+/* line 26, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+a:visited {
+  color: #666;
+}
+/* line 30, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
+/* line 36, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+th {
+  padding-bottom: 5px;
+}
+
+/* line 40, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+/* line 47, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+/* line 52, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+#notice {
+  color: green;
+}
+
+/* line 56, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+/* line 62, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+/* line 70, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0;
+  background-color: #c00;
+  color: #fff;
+}
+/* line 81, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+/* line 87, /home/ubuntu/environment/WatchaPedia/web/app/assets/stylesheets/scaffolds.scss */
+label {
+  display: block;
+}
+@import "reset.css";
+@import "menu.css";
+@import "type1_contents.css";
+@import "type2_contents.css";
+@import "footer.css";
+@import "contents.css";
+@import "popup.css";
+@import "contents_main.css";
+@import "profile.css";
+@import "comment.css";
+
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+.first_contents-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.contents-box {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contents {
+    width: 87%;
+    margin: 40px 0px;
+}
+
+.contents_title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.type1-contents_contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.type1-content-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.type1-content-box img {
+    position: relative;
+    width: 250px;
+    height: 360px;
+    border: 0.5px solid rgb(201, 201, 201);
+    border-radius: 3px;
+}
+
+.type1-content_title {
+    margin: 10px 0px;
+}
+
+.type1-content_year {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.type1-content_star {
+    font-size: 14px;
+    margin: 5px 0px;
+}
+
+.type1-content_info {
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.type1-content_number {
+    position: absolute;     
+    width: 26px;
+    height: 26px;
+    background-color: rgba(5, 5, 5, 0.6);
+    margin-left: 4px;
+    margin-top: 4px;
+    border-radius: 3px;
+    color:  white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.type2-contents_contents {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.type2-content-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.type2-content-box img {
+    position: relative;
+    width: 210px;
+    height: 300px;
+    border-radius: 3px;
+    border: 0.5px solid rgb(201, 201, 201);
+}
+
+.type2-content_title {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.type2-content_star {
+    font-size: 13px;
+    margin: 5px 0px;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
