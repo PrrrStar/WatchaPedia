@@ -6,7 +6,8 @@ class PeoplesController < ApplicationController
     end
     
     def show
-        @people = Person.all.order("created_at DESC")
+        
+        @person = Person.find_by(id: params[:id])
         
     end
 end

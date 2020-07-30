@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>왓차피디아 - 클론 코딩 프로젝트</title>
+</head>
+
+<body>
+<p id="notice"><%= notice %></p>
+    <!-- 메뉴 헤더입니다. -->
+    <header class="menu-box">
+        <div class="menu">
+            <div class="menu_left">
+                <%= link_to "/", :action =>'go' do %>
+                <img class="menu_logo" src="<%=asset_path 'logo.png'%>" />
+                <% end%>
+                <span class="menu_movie">영화</span>
+                <span class="menu_tv">TV 프로그램</span>
+                <span class="menu_book">책</span>
+            </div>
+            <div class="menu_right">
+                <div class="menu_search-box">
+                    <i class="fas fa-search"></i>
+                    <input class="menu_search" type="text" placeholder="작품 제목,배우,감독을 검색해보세요.">
+                </div>
+                <span class="menu_login">로그인</span>
+                <span class="menu_sign-up" id="js-signUp">회원가입</span>
+            </div>
+
+            <!-- 여기는 회원가입 팝업창입니다 -->
+            <div class="pop_sign-up">
+                <img src="<%=asset_path 'pop_logo.png'%>" class="pop_logo">
+                <span class="pop_title">회원가입</span>
+                <form action="">
+                    <div class="pop_input-box">
+                        <input type="text" placeholder="이름">
+                    </div>
+                    <div class="pop_input-box">
+                        <input type="text" placeholder="이메일">
+                    </div>
+                    <div class="pop_input-box">
+                        <input type="text" placeholder="비밀번호">
+                    </div>
+                </form>
+                <button class="pop_btn">회원가입</button>
+                <div class="pop_already">
+                    <span>이미 가입하셨나요?&nbsp;</span>
+                    <a href="">
+                        <span>로그인</span>
+                    </a>
+                </div>
+                <span class="pop_or">OR</span>
+                <div class="pop_line-box">
+                    <div class="pop_line"></div>
+                    <div class="pop_line"></div>
+                </div>
+                <button class="pop_facebook">
+                    <i class="fab fa-facebook-square"></i>
+                    <span>Facebook 으로 로그인</span>
+                </button>
+            </div>
+            <!-- 여기까지 회원가입 팝업창입니다 -->
+
+            <!-- 팝업창 팝업 시 뒷 배경 어둡게 하는 효과를 위한 박스 -->
+            <div class="overlay"></div>
+            <!-- 박스는 하나로 끝 -->
+
+        </div>
+    </header>
+    <!-- 여기까지 메뉴 헤더 -->
+
+    <!-- 여기서부터 메인 컨텐츠 박스입니다 -->
+    <main class="contents_main-box">
+      
+                <div class="contents_contents_column">
+                    <span class="contents_contents_title">출연/제작</span>
+                    <div class="contents_contents_container">
+                        <div class="contents_contents_content">
+                            <div class="contents_contents_profile">
+                              <div>
+                                <%=@person.name%>
+                                <img src="<%asset_path 'yang.jfif'%>" alt="<%=@person.name%>" class="profile_img">
+                            </div>
+                            <div>
+                                소개글
+                                <br>
+                                <% if @person.intro.present? %>
+                                    <%=@person.intro%>
+                                <% end%>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    </main>
+
+</body>
+
+</html>
+
+
+

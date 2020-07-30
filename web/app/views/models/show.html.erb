@@ -197,8 +197,9 @@
                     <div class="contents_contents_container">
                         <div class="contents_contents_content">
                             <div class="contents_contents_profile">
-                              
+
                               <% @model.people.each do |person| %>
+                                <%= link_to model_people_path(person), :action =>'go' do %>
                                 <img src="<%asset_path 'yang.jfif'%>" alt="<%=person.name%>" class="profile_img">
                                 
                                 <div>
@@ -206,6 +207,7 @@
                                     <span class="profile_job"><%=person.role%></span>
                                     
                                 </div>
+                                <% end %>
                               <% end %>
                               
                             </div>
