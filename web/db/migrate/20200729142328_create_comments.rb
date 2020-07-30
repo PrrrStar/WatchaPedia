@@ -1,9 +1,10 @@
 class CreateComments < ActiveRecord::Migration[5.0]
   def change
     create_table :comments do |t|
-      t.integer   :model_id
-      t.text      :c_content
-      t.integer   :c_like
+      t.belongs_to  :user
+      t.belongs_to  :models
+      t.text        :c_content
+      t.integer     :c_like
       
       t.timestamps
     end

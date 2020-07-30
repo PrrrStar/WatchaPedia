@@ -55,7 +55,11 @@
   <%= @model.people %>
 </p>
 
-
+<div>
+  <% @comments.each do |c| %>
+  <%c.c_content%>
+  <%end%>
+</div>
 
 <br>
 
