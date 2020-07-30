@@ -25,9 +25,26 @@
                     <i class="fas fa-search"></i>
                     <input class="menu_search" type="text" placeholder="작품 제목,배우,감독을 검색해보세요.">
                 </div>
-                <span class="menu_login">로그인</span>
-                <span class="menu_sign-up" id="js-signUp">회원가입</span>
             </div>
+
+            <% if user_signed_in? %>
+                안녕하세요 <strong><%= current_user.nickname %> 님</strong>.
+                <br>
+                <%= link_to '정보수정', edit_user_registration_path%> |
+  
+                <%= link_to destroy_user_session_path, method: :delete do %>
+                <span class="menu_sign-up">로그아웃</span>
+            <% end %>
+
+            <% else %>
+                <%= link_to new_user_session_path, :action => 'go' do %>
+                <span class="menu_login">로그인</span>
+                <% end %>
+                <%= link_to new_user_registration_path, :action => 'go' do %>
+
+                <span class="menu_sign-up" id="js-signUp">회원가입</span>
+                <% end %>
+            <% end %>
 
             <!-- 여기는 회원가입 팝업창입니다 -->
             <div class="pop_sign-up">
@@ -283,10 +300,10 @@
                                         <i class="fas fa-thumbs-up"></i>
                                         <%=comment.c_like%>
                                     </span>
-                                    <div class="comment_feel-comment">
+                                    <span class="comment_feel-comment">
                                         <i class="fas fa-comment"></i>
                                         [여기]
-                                    </div>
+                                    </span>
                                 </div>
                                 <div class="comment_click-good">좋아요</div>
                             </div>

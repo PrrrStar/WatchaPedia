@@ -24,6 +24,7 @@
  .comment-nemo {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     width: 315px;
     height: 315px;
     background-color: #F2F2F2;
