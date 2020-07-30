@@ -209,7 +209,7 @@
                         </div>
                         <span class="contents_contents_name contents_info"><%= @model.name %></span>
                         <span class="contents_contents_info contents_info">
-                            <span class="content_year"><%= @model.published %></span> ·
+                            <span class="content_year2"><%= @model.published %></span> ·
                             <%= @model.country %> · <%= @model.genre %></span>
                         <span class="contents_contents_runtime contents_info"><%= @model.running_time %></span>
                         <span class="contents_contents_summary contents_info">
@@ -480,6 +480,10 @@
             let year = document.querySelector(".content_year");
             let realYear = year.innerHTML.substr(0, 4);
             year.innerHTML = realYear;
+
+            let year2 = document.querySelector(".content_year2");
+            let realYear2 = year2.innerHTML.substr(0, 4);
+            year.innerHTML = realYear2;
         }
 
         // 백엔드에서 넘어온 분으로만 표기된 런타임을 시간, 분으로 나눠서 출력해주는 함수
