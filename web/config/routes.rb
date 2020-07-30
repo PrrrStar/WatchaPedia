@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
-  resources :models
-  
+  resources :models do
+    resources :comments, only: [:create, :destroy]
+  end
   authenticate :user, lambda { |u| u.admin? } do
       begin
         mount RailsAdmin::Engine => '/admin', as: 'rails_admin'

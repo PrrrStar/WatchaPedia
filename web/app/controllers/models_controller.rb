@@ -4,7 +4,6 @@ class ModelsController < ApplicationController
   # GET /models
   # GET /models.json
   def index
-    #랭크순으로 정렬
     
     @models = Model.all.order(:rank)
   end
@@ -12,10 +11,6 @@ class ModelsController < ApplicationController
   # GET /models/1
   # GET /models/1.json
   def show
-    @comments = Comment.all.order('created_at desc')
-    
-    #댓글 카운트
-    #@comments_count = current_user.comments.count
   end
 
   # GET /models/new
@@ -29,12 +24,12 @@ class ModelsController < ApplicationController
 
   # POST /models
   # POST /models.json
-  def creates
-    @comment  = Comment.new(user_id: current_user.id, c_content: params[:c_content])
+  def create
+    @model = Model.new(model_params)
 
     respond_to do |format|
-      if @comment.save
-        format.html { redirect_to @comment, notice: 'Model was successfully created.' }
+      if @model.save
+        format.html { redirect_to @model, notice: 'Model was successfully created.' }
         format.json { render :show, status: :created, location: @model }
       else
         format.html { render :new }

@@ -54,12 +54,36 @@
   <strong>People:</strong>
   <%= @model.people %>
 </p>
-
+<br><br>
 <div>
-  <% @comments.each do |c| %>
-  <%c.c_content%>
-  <%end%>
+  댓글 :<%=@comments_count%>
+  
+  
+  <%=form_tag model_comments_path(@model) do%>
+    <div class="input-field">
+      <%= text_area_tag :c_content, nil, placeholder: "댓글 작성해주세요", require: true%>
+      <input type="submit" value="댓글 쓰기">
+    </div>
+    
+    <div>
+    <% if @model.comments.present? %>
+      <ul>
+        <% @model.comments.each do |comment| %>
+        <li>
+          <span><%= comment.user.nickname%></span>
+          <span><%= comment.created_at%></span>
+          <p><%= comment.c_content %></p> like <%=comment.c_like%>
+        
+          <% if current_user.id == comment.user_id %>
+            <%=link_to "삭제", model_comment_path(@model ,comment), method: "delete" %> 
+          <% end%>
+          
+        </li>
+        <% end %>
+      </ul>
+      
+      
+    <%end%>
+    </div>
+  <%end %>
 </div>
-
-<br>
-

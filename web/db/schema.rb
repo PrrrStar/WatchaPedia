@@ -14,12 +14,12 @@ ActiveRecord::Schema.define(version: 20200730070534) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "models_id"
+    t.integer  "model_id"
     t.text     "c_content"
     t.integer  "c_like"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["models_id"], name: "index_comments_on_models_id"
+    t.index ["model_id"], name: "index_comments_on_model_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
