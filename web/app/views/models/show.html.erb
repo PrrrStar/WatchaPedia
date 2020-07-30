@@ -1,3 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>왓차피디아 - 클론 코딩 프로젝트</title>
+</head>
+
+<body>
+    <!-- 메뉴 헤더입니다. -->
+    <header class="menu-box">
+        <div class="menu">
+            <div class="menu_left">
+                <a href="index.html"><img class="menu_logo" src="img/logo.png" /></a>
+                <span class="menu_movie">영화</span>
+                <span class="menu_tv">TV 프로그램</span>
+                <span class="menu_book">책</span>
+            </div>
+            <div class="menu_right">
+                <div class="menu_search-box">
+                    <i class="fas fa-search"></i>
+                    <input class="menu_search" type="text" placeholder="작품 제목,배우,감독을 검색해보세요.">
+                </div>
+                <span class="menu_login">로그인</span>
+                <span class="menu_sign-up" id="js-signUp">회원가입</span>
+            </div>
+
+            <!-- 여기는 회원가입 팝업창입니다 -->
+            <div class="pop_sign-up">
+                <img src="img/pop_logo.png" class="pop_logo">
+                <span class="pop_title">회원가입</span>
+                <form action="">
+                    <div class="pop_input-box">
+                        <input type="text" placeholder="이름">
+                    </div>
+                    <div class="pop_input-box">
+                        <input type="text" placeholder="이메일">
+                    </div>
+                    <div class="pop_input-box">
+                        <input type="text" placeholder="비밀번호">
+                    </div>
+                </form>
+                <button class="pop_btn">회원가입</button>
+                <div class="pop_already">
+                    <span>이미 가입하셨나요?&nbsp;</span>
+                    <a href="">
+                        <span>로그인</span>
+                    </a>
+                </div>
+                <span class="pop_or">OR</span>
+                <div class="pop_line-box">
+                    <div class="pop_line"></div>
+                    <div class="pop_line"></div>
+                </div>
+                <button class="pop_facebook">
+                    <i class="fab fa-facebook-square"></i>
+                    <span>Facebook 으로 로그인</span>
+                </button>
+            </div>
+            <!-- 여기까지 회원가입 팝업창입니다 -->
+
+            <!-- 팝업창 팝업 시 뒷 배경 어둡게 하는 효과를 위한 박스 -->
+            <div class="overlay"></div>
+            <!-- 박스는 하나로 끝 -->
+
+        </div>
+    </header>
+    <!-- 여기까지 메뉴 헤더 -->
+
+    <!-- 메뉴바 밑에 콘텐츠 썸네일 -->
+    <div class="thumbnail"></div>
+    <!-- 여기까지 썸네일 -->
+
+    <!-- 썸네일 밑에 겹쳐있는 콘텐츠 정보들입니다. -->
+    <div class="content_info-box">
+
+        <!-- 왼쪽 포스터입니다. -->
+        <div class="left-column">
+            <img src="img/ironrain.jpg" alt="강철비2: 정상회담">
+        </div>
+        <!-- 여기까지 왼쪽 포스터 -->
+
+        <!-- 포스터 오른쪽 정보들 입니다. -->
+        <div class="right-column">
+            <!-- 첫번째 줄 -->
+            <div class="content_info">
+                <span class="gray">예매 순위 ·&nbsp;</span>
+                <span class="white">1위(56%)&nbsp;</span>
+                <span class="gray">개봉 ·&nbsp;</span>
+                <span class="white">오늘 개봉 &nbsp;</span>
+                <span class="gray">누적 관객 ·&nbsp;</span>
+                <span class="white">3,870명</span>
+            </div>
+            <!-- 첫번째 줄 끝 -->
+
+            <!-- 두번째 줄 작품명 -->
+            <div class="content_info">
+                <span class="content_title">강철비2: 정상회담</span>
+            </div>
+            <!-- 두번째 줄 작품명 끝 -->
+
+            <!-- 세번째 줄 년도, 장르, 나라-->
+            <div class="content_info">
+                <span class="content_type">2019 · 드라마 · 한국</span>
+            </div>
+            <!-- 세번째 줄 년도, 장르, 나라 끝 -->
+
+            <!-- 네번째 줄 평점 -->
+            <div class="content_info">
+                <span class="content_star">평점 ★2.9 (690명)</span>
+            </div>
+            <!-- 네번째 줄 평점 끝 -->
+
+            <!-- 마지막 보고싶어요, 별점 평가하기 -->
+            <div class="content_info">
+                <!-- 보고싶어요 버튼 -->
+                <div class="content_info-left">
+                    <div class="content_want-see">
+                        <i class="fas fa-plus plus-rotate"></i>
+                        <span>보고싶어요</span>
+                    </div>
+                </div>
+                <!-- 보고싶어요 버튼 끝 -->
+
+                <!-- 별점 평가하기 -->
+                <div class="content_info-right">
+                    <span>평가하기</span>
+                    <div class="content_info_star">
+                        <div class="star_box star1" value="0.5"></div>
+                        <i class="far fa-star real-star1 real-star"></i>
+                        <div class="star_box star2" value="1"></div>
+                        <div class="star_box star3" value="1.5"></div>
+                        <i class="far fa-star real-star2 real-star"></i>
+                        <div class="star_box star4" value="2"></div>
+                        <div class="star_box star5" value="2.5"></div>
+                        <i class="far fa-star real-star3 real-star"></i>
+                        <div class="star_box star6" value="3"></div>
+                        <div class="star_box star7" value="3.5"></div>
+                        <i class="far fa-star real-star4 real-star"></i>
+                        <div class="star_box star8" value="4"></div>
+                        <div class="star_box star9" value="4.5"></div>
+                        <i class="far fa-star real-star5 real-star"></i>
+                        <div class="star_box star10" value="5"></div>
+                    </div>
+                </div>
+                <!-- 별점 평가하기 끝 -->
+
+            </div>
+            <!-- 여기까지가 마지막 줄에 보고싶어요, 별점 평가하기 끝 -->
+
+        </div>
+        <!-- 여기까지 오른쪽 정보들 -->
+    </div>
+    <!-- 여기까지 영화 정보들 입니다 -->
+
+    <!-- 여기서부터 메인 컨텐츠 박스입니다 -->
+    <main class="contents_main-box">
+        <div class="contents_middle-box">
+            <div class="contents_contents-box">
+                <!-- 첫번째(기본정보) 박스입니다 -->
+                <div class="contents_contents_column">
+                    <div>
+                        <span class="contents_contents_title">기본 정보</span>
+
+                        <!-- 기본정보 더보기 링크 연결해주세요 -->
+                        <a href="">
+                            <span class="contents_contents_more">더보기</span>
+                        </a>
+                        <!-- 여기입니다 -->
+
+                    </div>
+                    <span class="contents_contents_name contents_info">강철비2: 정상회담</span>
+                    <span class="contents_contents_info contents_info">2019 · 한국 · 드라마</span>
+                    <span class="contents_contents_runtime contents_info">2시간 12분</span>
+                    <span class="contents_contents_summary contents_info">
+                        남북미 정상회담 중, 북한 내 쿠데타로 세 정상이 납치된다!&nbsp;
+                        북미 평화협정 체결을 위한 대한민국 대통령(정우성), 북한의 최고지도자인 위원장(유연석)과&nbsp;
+                        미국 대통령(앵거스 맥페이든)간의 남북미 정상회담이 북한 원산에서 열...
+                    </span>
+                </div>
+                <!-- 첫번째(기본정보) 끝입니다 -->
+
+                <!-- 두번째(출연/제작) 시작 -->
+                <div class="contents_contents_column">
+                    <span class="contents_contents_title">출연/제작</span>
+                    <div class="contents_contents_container">
+                        <div class="contents_contents_content">
+                            <div class="contents_contents_profile">
+                                <img src="img/yang.jfif" alt="양우석" class="profile_img">
+                                <div>
+                                    <span class="profile_name">양우석</span>
+                                    <span class="profile_job">감독</span>
+                                </div>
+                            </div>
+                            <div class="contents_contents_profile">
+                                <img src="img/actor1.jfif" alt="정우성" class="profile_img">
+                                <div>
+                                    <span class="profile_name">정우성</span>
+                                    <span class="profile_job">주연</span>
+                                </div>
+                            </div>
+                            <div class="contents_contents_profile">
+                                <img src="img/actor2.jfif" alt="곽도원" class="profile_img">
+                                <div>
+                                    <span class="profile_name">곽도원</span>
+                                    <span class="profile_job">주연</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contents_contents_content">
+                            <div class="contents_contents_profile">
+                                <img src="img/actor3.jfif" alt="유연석" class="profile_img">
+                                <div>
+                                    <span class="profile_name">유연석</span>
+                                    <span class="profile_job">주연</span>
+                                </div>
+                            </div>
+                            <div class="contents_contents_profile">
+                                <img src="img/actor4.jfif" alt="앵거스 맥페이든" class="profile_img">
+                                <div>
+                                    <span class="profile_name">앵거스 맥페이든</span>
+                                    <span class="profile_job">주연</span>
+                                </div>
+                            </div>
+                            <div class="contents_contents_profile">
+                                <img src="img/actor5.jfif" alt="김상욱" class="profile_img">
+                                <div>
+                                    <span class="profile_name">김상욱</span>
+                                    <span class="profile_job">조연</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 두번째(출연/제작) 끝 -->
+
+                <!-- 세번째(별점 그래프) 시작 -->
+                <div class="contents_contents_column">
+                    <div>
+                        <span class="contents_contents_title">별점 그래프</span>
+                        <div>
+                            <span class="star_average">평균 ★2.9</span>
+                            <span class="star_people">(2,225명)</span>
+                        </div>
+                    </div>
+                    <div class="contents_contents_star-box">
+                        <img src="img/star_graph.png" alt="별점 그래프" class="star-graph">
+                    </div>
+                </div>
+                <!-- 세번째(별점 그래프) 끝 -->
+
+                <!-- 네번째(코멘트) 시작 -->
+                <div class="contents_contents_column">
+                    <div>
+                        <div>
+                            <span class="contents_contents_title">코멘트</span>
+                            <span class="contents_contents_title-number">550+</span>
+                        </div>
+
+                        <!-- 코멘트 더보기 링크 연결해주세요 -->
+                        <a href="">
+                            <span class="contents_contents_more">더보기</span>
+                        </a>
+                        <!-- 여기입니다 -->
+
+                    </div>
+                    <div class="contents_contents_comment-container">
+                        <div class="comment-box">
+                            <div class="comment_user">
+                                <img src="" alt="" class="comment_user-img">
+                                <span class="user_name">filmaholic9</span>
+                            </div>
+                            <div class="comment_comment">
+                                대한민국 대통령 정우성에 김정은은 유연석 ㅋㅋㅋㅋㅋㅋㅋㅋ 캐스팅부터 장난하냐 ㅋㅋㅋㅋㅋㅋㅋ
+                                (대충 예상되는 내용)
+                                미국 : 평화협정 하자고 불러놓고는 자기들의 이익만 추구하며 훼방을 놓고 억지
+                            </div>
+                            <div class="comment_feel">
+                                <span class="comment_feel-good"></span>
+                                <div class="comment_feel-comment"></div>
+                            </div>
+                            <div class="comment_click-good">좋아요</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 네번째(코멘트) 끝 -->
+
+                <div class="contents_contents_column">
+                    <div>
+                        <span class="contents_contents_title">이 작품이 담긴 컬렉션</span>
+                        <span class="contents_contents_title-number">143</span>
+                    </div>
+                </div>
+                <div class="contents_contents_column">
+                    <span class="contents_contents_title">비슷한 작품</span>
+                </div>
+            </div>
+            <div class="contents_side-box"></div>
+        </div>
+    </main>
+    <!-- 여기까지 메인 컨텐츠 박스였습니다 -->
+    <footer>
+        <div class="small-box ">
+            <span class="review">
+                지금까지&nbsp;
+            </span>
+            <span class="review review-red">
+                ★ 562,339,084 개의 평가가&nbsp;
+            </span>
+            <span class="review">
+                쌓였어요.
+            </span>
+        </div>
+        <div class="big-box">
+            <div class="first-column column">
+                <span class="footer_info">
+                    서비스 이용약관 &nbsp;|&nbsp; 개인정보 처리방침 &nbsp;|&nbsp; 회사 안내
+                </span>
+            </div>
+            <div class="second-column column">
+                <span class="footer_info">
+                    고객센터 &nbsp;|&nbsp; cs@watchapedia.co.kr
+                </span>
+                <span class="footer_info">
+                    제휴 및 대외 협력 &nbsp;|&nbsp; contact@watcha.com, 070-7554-9696
+                </span>
+            </div>
+            <div class="third-column column">
+                <span class="footer_info">
+                    주식회사 왓챠 &nbsp;|&nbsp; 대표 박태훈 &nbsp;|&nbsp; 서울특별시 서초구 강남대로 343 신덕빌딩 3층
+                </span>
+                <span class="footer_info">
+                    사업자 등록 번호 211-88-66013
+                </span>
+                <div class="footer_info">
+                    <img src="img/footer_logo.png" class="footer_logo">
+                    <span class="footer_info">© 2011 Watcha. Inc</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="js/index.js"></script>
+    <script src="js/star.js"></script>
+</body>
+
+</html>
+
+
 <p id="notice"><%= notice %></p>
 
 <p>

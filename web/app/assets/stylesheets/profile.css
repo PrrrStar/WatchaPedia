@@ -1,0 +1,40 @@
+.contents_contents_container {
+    margin-top: 15px;
+    display: flex;
+}
+
+.contents_contents_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.contents_contents_profile {
+    display: flex;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.profile_img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.contents_contents_profile div {
+    display: flex;
+    flex-direction: column;
+    width: 210px;
+    border-bottom: 1px solid #F8F8F8;
+    padding-bottom: 15px;
+}
+
+.profile_name {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.profile_job {
+    font-size: 14px;
+    color: rgb(131, 131, 131);
+}
