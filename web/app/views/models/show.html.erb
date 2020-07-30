@@ -28,22 +28,22 @@
             </div>
 
             <% if user_signed_in? %>
-                안녕하세요 <strong><%= current_user.nickname %> 님</strong>.
-                <br>
-                <%= link_to '정보수정', edit_user_registration_path%> |
-  
-                <%= link_to destroy_user_session_path, method: :delete do %>
-                <span class="menu_sign-up">로그아웃</span>
+            안녕하세요 <strong><%= current_user.nickname %> 님</strong>.
+            <br>
+            <%= link_to '정보수정', edit_user_registration_path%> |
+
+            <%= link_to destroy_user_session_path, method: :delete do %>
+            <span class="menu_sign-up">로그아웃</span>
             <% end %>
 
             <% else %>
-                <%= link_to new_user_session_path, :action => 'go' do %>
-                <span class="menu_login">로그인</span>
-                <% end %>
-                <%= link_to new_user_registration_path, :action => 'go' do %>
+            <%= link_to new_user_session_path, :action => 'go' do %>
+            <span class="menu_login">로그인</span>
+            <% end %>
+            <%= link_to new_user_registration_path, :action => 'go' do %>
 
-                <span class="menu_sign-up" id="js-signUp">회원가입</span>
-                <% end %>
+            <span class="menu_sign-up" id="js-signUp">회원가입</span>
+            <% end %>
             <% end %>
 
             <!-- 여기는 회원가입 팝업창입니다 -->
@@ -129,7 +129,8 @@
 
             <!-- 세번째 줄 년도, 장르, 나라-->
             <div class="content_info">
-                <span class="content_type"><%= @model.published %> · <%= @model.genre %> · <%= @model.country %></span>
+                <span class="content_type"><span class="content_year"><%= @model.published %></span> ·
+                    <%= @model.genre %> · <%= @model.country %></span>
             </div>
             <!-- 세번째 줄 년도, 장르, 나라 끝 -->
 
@@ -207,7 +208,8 @@
                             <!-- 여기입니다 -->
                         </div>
                         <span class="contents_contents_name contents_info"><%= @model.name %></span>
-                        <span class="contents_contents_info contents_info"><%= @model.published %> ·
+                        <span class="contents_contents_info contents_info">
+                            <span class="content_year"><%= @model.published %></span> ·
                             <%= @model.country %> · <%= @model.genre %></span>
                         <span class="contents_contents_runtime contents_info"><%= @model.running_time %></span>
                         <span class="contents_contents_summary contents_info">
@@ -435,6 +437,7 @@
             event.target.addEventListener("click", resetFunction);
         }
 
+        // 별점 개수에 따라 표현을 다르게 해주는 함수
         function howFeel(value) {
             if (value == "0.5") {
                 leaveStar.innerHTML = "최악이에요";
@@ -472,6 +475,28 @@
             starBox.addEventListener("mouseout", resetStar);
         }
 
+        // 연도가 백엔드에서 주면 오늘날짜까지 나오는데 연도까지만 끊어서 내보내는 함수
+        function processYear() {
+            let year = document.querySelector(".content_year");
+            let realYear = year.innerHTML.substr(0, 4);
+            year.innerHTML = realYear;
+        }
+
+        // 백엔드에서 넘어온 분으로만 표기된 런타임을 시간, 분으로 나눠서 출력해주는 함수
+        function processRuntime() {
+            let runtime = document.querySelector(".contents_contents_runtime");
+            let realRuntime = parseInt(runtime.innerHTML);
+            let runtimeHour = parseInt(realRuntime / 60);
+            let runtimeMin = realRuntime % 60;
+            runtime.innerHTML = runtimeHour + "시간 " + runtimeMin + "분";
+        }
+
+        // 백엔드에서 러프하게 넘어온 데이터들을 가공해서 내보내는 함수
+        function init() {
+            processYear();
+            processRuntime();
+        }
+
         // 반복문과 배열을 이용하여, 위의 함수들을 호출할수 있게끔 addEventListener를 달아줬습니다.
         for (var i = 0; i < stars.length; i++) {
             stars[i].addEventListener("mouseover", fillStars);
@@ -480,6 +505,7 @@
         };
 
         starBox.addEventListener("mouseout", resetStar);
+        init();
     </script>
 </body>
 
